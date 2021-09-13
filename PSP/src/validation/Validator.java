@@ -16,5 +16,4 @@ public class Validator {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

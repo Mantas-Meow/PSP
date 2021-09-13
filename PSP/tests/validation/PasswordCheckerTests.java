@@ -18,21 +18,21 @@ class PasswordCheckerTests {
 	
 	@Test
 	void passwordValidator_passwordTooShort_shouldReturnFalse() {
-		String password = "123";
+		String password = "P$123";
 		boolean valid = validator.validatePassword(password);
 		assertFalse(valid);
 	}
 	
 	@Test
 	void passwordValidator_hasAnUppercase_shouldReturnTrue() {
-		String password = "Password";
+		String password = "Pas$word";
 		boolean valid = validator.validatePassword(password);
 		assertTrue(valid);
 	}
 	
 	@Test
 	void passwordValidator_hasAnUppercase_shouldReturnFalse() {
-		String password = "password";
+		String password = "pas$word";
 		boolean valid = validator.validatePassword(password);
 		assertFalse(valid);
 	}

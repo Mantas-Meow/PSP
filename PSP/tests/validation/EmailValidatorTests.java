@@ -32,14 +32,14 @@ class EmailValidatorTests {
 	
 	@Test
 	void emailValidator_hasAtSymbol_shouldReturnFalse() {
-		String email = "test.com";
+		String email = "testgmail.com";
 		boolean valid = validator.validateEmail(email);
 		assertFalse(valid);
 	}
 	
 	@Test
 	void emailValidator_hasAtSymbol_shouldReturnTrue() {
-		String email = "test@.com";
+		String email = "test@gmail.com";
 		boolean valid = validator.validateEmail(email);
 		assertTrue(valid);
 	}
