@@ -19,6 +19,7 @@ class PasswordCheckerTests {
 	@Test
 	void passwordValidator_passwordTooShort_shouldReturnFalse() {
 		String password = "P$123";
+		validator.minLength(8);
 		boolean valid = validator.validatePassword(password);
 		assertFalse(valid);
 	}
@@ -40,6 +41,7 @@ class PasswordCheckerTests {
 	@Test
 	void passwordValidator_hasSpecialCharacters_shouldReturnTrue() {
 		String password = "Password$";
+		validator.specialCharacters("@#$%^&&*()");
 		boolean valid = validator.validatePassword(password);
 		assertTrue(valid);
 	}
@@ -47,6 +49,7 @@ class PasswordCheckerTests {
 	@Test
 	void passwordValidator_hasSpecialCharacters_shouldReturnFalse() {
 		String password = "Password";
+		validator.specialCharacters("@#$%^&&*()");
 		boolean valid = validator.validatePassword(password);
 		assertFalse(valid);
 	}
