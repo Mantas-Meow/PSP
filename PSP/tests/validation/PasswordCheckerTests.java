@@ -19,7 +19,7 @@ class PasswordCheckerTests {
 	@Test
 	void passwordValidator_passwordTooShort_shouldReturnFalse() {
 		String password = "P$123";
-		validator.minLength(8);
+		validator.passwordMinLength(8);
 		boolean valid = validator.validatePassword(password);
 		assertFalse(valid);
 	}
