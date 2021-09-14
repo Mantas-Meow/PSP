@@ -19,6 +19,7 @@ class PhoneValidatorTests {
 	@Test
 	void phoneValidator_numberTooShort_shouldReturnFalse() {
 		String number = "+3765";
+		validator.phoneLength(12);
 		boolean valid = validator.validatePhoneNumber(number);
 		assertFalse(valid);
 	}
@@ -26,6 +27,7 @@ class PhoneValidatorTests {
 	@Test
 	void phoneValidator_numberTooLong_shouldReturnFalse() {
 		String number = "+370645899457";
+		validator.phoneLength(12);
 		boolean valid = validator.validatePhoneNumber(number);
 		assertFalse(valid);
 	}
@@ -54,6 +56,7 @@ class PhoneValidatorTests {
 	@Test
 	void phoneValidator_numberMatchesCountryCodeLV_shouldReturnTrue() {
 		String number = "+37164565020";
+		validator.phoneCountry("LV","+371");
 		boolean valid = validator.validatePhoneNumber(number);
 		assertTrue(valid);
 	}
