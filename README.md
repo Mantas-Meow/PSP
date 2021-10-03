@@ -3,7 +3,9 @@ Added Unit tests to alpha branch.
 
 # Lab 2
 Got Unit test from https://github.com/monikazabukaite/PSP.
+
 Had to implement Validation classes/methods using these tests.
+
 This can be found in the Lab2 branch.
 
 Feedback:
