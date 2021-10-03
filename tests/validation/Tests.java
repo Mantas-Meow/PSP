@@ -21,47 +21,77 @@ public class Tests {
 
     @Test
     void TestIfPasswordLengthIsAtLeastX() {
-        assertTrue(passwordChecker.isAtLeastX("pass12345", 5));
+    	assertAll(
+    	() -> assertTrue(passwordChecker.isAtLeastX("pass12345", 5)),
+    	() -> assertFalse(passwordChecker.isAtLeastX("pass", 5))
+    	); 
+        
     }
 
     @Test
     void TestIfPasswordHasUppercaseSymbols() {
-        assertTrue(passwordChecker.hasUppercaseSymbols("Pass12345"));
+    	assertAll(
+        () -> assertTrue(passwordChecker.hasUppercaseSymbols("Pass12345")),
+        () -> assertFalse(passwordChecker.hasUppercaseSymbols("pass12345"))
+        );
     }
 
     @Test
     void TestIfPasswordHasSpecialSymbols() {
-        assertTrue(passwordChecker.hasSpecialSymbols("Pass-12345"));
+    	assertAll(
+    	() -> assertTrue(passwordChecker.hasSpecialSymbols("Pass-12345")),
+    	() -> assertFalse(passwordChecker.hasSpecialSymbols("Pass12345"))
+    	);
+        
     }
 
     @Test
     void TestIfPhoneNumberHasOnlyNumbers() {
-        assertTrue(phoneValidator.hasOnlyNumbers("911"));
+    	assertAll(
+    		() -> assertTrue(phoneValidator.hasOnlyNumbers("911")),
+    		() -> assertFalse(phoneValidator.hasOnlyNumbers("9a11"))
+    	);
     }
 
     @Test
     void TestIfPhoneNumberBeginsWithEight() {
-        assertTrue(phoneValidator.beginsWithEight("861122333"));
+    	assertAll(
+    	() -> assertTrue(phoneValidator.beginsWithEight("861122333")),
+    	() -> assertFalse(phoneValidator.beginsWithEight("761122333"))
+    	);
     }
 
     @Test
     void TestIfPhoneNumberBelongsToSelectedCountry() {
-        assertTrue(phoneValidator.belongsToSelectedCountry("+49301234567"));
+    	assertAll(
+    	() -> assertTrue(phoneValidator.belongsToSelectedCountry("+49301234567")),
+    	() -> assertFalse(phoneValidator.belongsToSelectedCountry("+48301234567"))	
+    	);
+        
     }
 
     @Test
     void TestIfEmailHasAtSign() {
-        assertTrue(emailValidator.hasAtSign("name.surname@gmail.com"));
+    	assertAll(
+    	() -> assertTrue(emailValidator.hasAtSign("name.surname@gmail.com")),
+    	() -> assertFalse(emailValidator.hasAtSign("name.surnamegmail.com"))
+    	);        
     }
 
     @Test
     void TestIfEmailHasInvalidCharacters() {
-        assertFalse(emailValidator.hasInvalidCharacters("name.surname@gmail.com"));
+    	assertAll(
+    	    	() -> assertFalse(emailValidator.hasInvalidCharacters("name.surname@gmail.com")),
+    	    	() -> assertTrue(emailValidator.hasInvalidCharacters("name.surn[ame@gmail.com"))
+    	);
     }
 
     @Test
     void TestIfEmailHasCorrectDomainAndTLD() {
-        assertTrue(emailValidator.hasCorrectDomainAndTDL("name.surname@gmail.com"));
+    	assertAll(
+    	    	() -> assertTrue(emailValidator.hasCorrectDomainAndTDL("name.surname@gmail.com")),
+    	    	() -> assertFalse(emailValidator.hasCorrectDomainAndTDL("name.surname@gmail.c5m"))
+    	);
     }
 
 }

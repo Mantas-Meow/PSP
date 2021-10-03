@@ -14,11 +14,11 @@ public class PhoneValidator {
 
 	public boolean hasOnlyNumbers(String string) {
 		for (int i=0; i < string.length(); i++) {
-			if (Character.isDigit(string.charAt(i))) {
-				return true;
+			if (!Character.isDigit(string.charAt(i))) {
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 	public boolean beginsWithEight(String string) {
