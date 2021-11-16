@@ -14,3 +14,14 @@ Feedback:
 * The Unit tests tested individual methods instead of one general validation method.
 * To improve these tests I would try to cover more edge cases, use one general validate method. There was no clear indicator of what are special symbols and what country codes should be included in PhoneValidator.
 * There should be added tests to check if strings are empty and, as I mentioned previously, tests should check correct and wrong behavior of given methods.
+
+# Lab 2
+Got validator from https://github.com/Kristupaz/PSP
+
+Had to use the provided validator.
+
+This can be found in the 1.3-Lab branch.
+
+Feedback:
+* I converted the library that I got to .jar file but the resources folder moved and in the provided validator the static path does not find the files and throws exeptions. Because of that 2 out of 3 validators are not working.
+* The validators themselfs are quite well written and it's intuative to use them.
