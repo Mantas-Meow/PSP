@@ -15,7 +15,7 @@ Feedback:
 * To improve these tests I would try to cover more edge cases, use one general validate method. There was no clear indicator of what are special symbols and what country codes should be included in PhoneValidator.
 * There should be added tests to check if strings are empty and, as I mentioned previously, tests should check correct and wrong behavior of given methods.
 
-# Lab 2
+# Lab 3
 Got validator from https://github.com/Kristupaz/PSP
 
 Had to use the provided validator.
